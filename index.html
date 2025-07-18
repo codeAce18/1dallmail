@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1DALLMAIL - World's First Multi-Server Single-Domain Solution</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Japanese-inspired typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="3d-architecture.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQQXBK90YV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KQQXBK90YV');
+    </script>
+
+    <!-- Three.js for 3D Server Architecture -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <!-- Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#" data-aos="fade-right">
+                <span class="brand-text">1DALL</span><span class="brand-accent">MAIL</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#innovation">Innovation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Benefits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#comparison">Comparison</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cta-nav" href="#contact">Request Briefing</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg">
+            <div class="hero-image-overlay">
+                <img src="/images/hero-futuristic-servers.png" alt="Futuristic Email Server Infrastructure" class="hero-bg-image">
+            </div>
+            <div class="grid-overlay"></div>
+            <div class="floating-particles"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <i class="fas fa-crown"></i>
+                            <span>World's First Innovation</span>
+                        </div>
+                        
+                        <h1 class="hero-title">
+                            <span class="title-line">The World's First</span>
+                            <span class="title-line accent">Structural Transformation</span>
+                        </h1>
+
+                        <p class="hero-subtitle">
+                            Fortune 500 Companies Choose Invitation-Only Email Infrastructure
+                        </p>
+
+                        <div class="hero-cta">
+                            <button class="btn btn-primary btn-lg cta-primary">
+                                <span>Get More Information About Innovations</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button class="btn btn-outline-light btn-lg cta-secondary">
+                                <i class="fas fa-play"></i>
+                                <span>Watch Technical Demo</span>
+                            </button>
+                        </div>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Fortune Companies</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">99.9%</div>
+                                <div class="stat-label">Uptime SLA</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">6</div>
+                                <div class="stat-label">Spots Left 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <div class="server-network">
+                            <div class="central-node">
+                                <div class="node-core"></div>
+                                <div class="node-ring"></div>
+                                <div class="node-pulse"></div>
+                            </div>
+                            
+                            <div class="satellite-nodes">
+                                <div class="satellite-node" data-delay="0">
+                                    <div class="node-dot"></div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <div class="satellite-node" data-delay="0.5">
+                                    <div class="node-dot"></div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <div class="satellite-node" data-delay="1">
+                                    <div class="node-dot"></div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <div class="satellite-node" data-delay="1.5">
+                                    <div class="node-dot"></div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <div class="satellite-node" data-delay="2">
+                                    <div class="node-dot"></div>
+                                    <div class="connection-line"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="data-streams">
+                                <div class="stream stream-1"></div>
+                                <div class="stream stream-2"></div>
+                                <div class="stream stream-3"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="hologram-ui">
+                            <div class="ui-panel panel-1">
+                                <div class="panel-header">DOMAIN STATUS</div>
+                                <div class="panel-content">
+                                    <div class="status-item active">
+                                        <span class="status-dot"></span>
+                                        <span>company.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ui-panel panel-2">
+                                <div class="panel-header">SERVERS</div>
+                                <div class="panel-content">
+                                    <div class="server-list">
+                                        <div class="server-item">SRV-001</div>
+                                        <div class="server-item">SRV-002</div>
+                                        <div class="server-item">SRV-003</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <div class="scroll-text">Scroll to explore</div>
+        </div>
+    </section>
+
+    <!-- Problem Statement Section -->
+    <section id="problem" class="problem-section">
+        <div class="problem-bg-wrapper">
+            <img src="/images/problem-split-screen.jpg" alt="Email Infrastructure Problems" class="problem-bg-image">
+            <div class="problem-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">Why Do We Need More Than One Mail Server for One Domain?</h2>
+                        <p class="section-subtitle">The fundamental limitation that has plagued enterprise email infrastructure</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="problem-visual">
+                        <div class="chaos-network">
+                            <div class="tangled-connections">
+                                <div class="connection error"></div>
+                                <div class="connection error"></div>
+                                <div class="connection error"></div>
+                                <div class="connection error"></div>
+                            </div>
+                            <div class="domain-mess">
+                                <div class="domain-item error">ceo.company.com</div>
+                                <div class="domain-item error">exec.company.com</div>
+                                <div class="domain-item error">board.company.com</div>
+                                <div class="domain-item error">secure.company.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="problem-content">
+                        <div class="problem-list">
+                            <div class="problem-item">
+                                <div class="problem-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="problem-text">
+                                    <h4>Subdomain Branding Disaster</h4>
+                                    <p>Executive emails from ceo.subdomain.com damage corporate identity</p>
+                                </div>
+                            </div>
+                            
+                            <div class="problem-item">
+                                <div class="problem-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="problem-text">
+                                    <h4>Security Vulnerabilities</h4>
+                                    <p>Multiple domains create attack vectors for government & banking sectors</p>
+                                </div>
+                            </div>
+                            
+                            <div class="problem-item">
+                                <div class="problem-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="problem-text">
+                                    <h4>Management Complexity</h4>
+                                    <p>IT teams struggle with fragmented email infrastructure across departments</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="transition-text">
+                            <p>Until now, this was considered <strong>technically impossible to solve</strong>...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Section -->
+    <section id="innovation" class="innovation-section">
+        <div class="innovation-bg-wrapper">
+            <img src="/images/innovation-wireframe.jpg" alt="3D Wireframe Network" class="innovation-bg-image">
+            <div class="innovation-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-header text-center">
+                        <div class="innovation-badge">
+                            <i class="fas fa-atom"></i>
+                            <span>Patent Pending</span>
+                        </div>
+                        <h2 class="section-title">World's First Technological Innovation by 1DALLMAIL</h2>
+                        <p class="section-subtitle">Patent-pending breakthrough that makes the impossible possible</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="innovation-grid">
+                        <div class="innovation-item">
+                            <div class="innovation-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h4>Virtual Domain + Relay Architecture</h4>
+                            <p>Proprietary technology enables multiple mail servers to operate seamlessly under one domain</p>
+                        </div>
+                        
+                        <div class="innovation-item">
+                            <div class="innovation-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>AI Integrated Management System</h4>
+                            <p>Machine learning algorithms automatically optimize routing and manage server loads</p>
+                        </div>
+                        
+                        <div class="innovation-item">
+                            <div class="innovation-icon">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <h4>Dynamic Security Keys</h4>
+                            <p>Advanced encryption with rotating keys ensures military-grade security standards</p>
+                        </div>
+                        
+                        <div class="innovation-item">
+                            <div class="innovation-icon">
+                                <i class="fas fa-infinity"></i>
+                            </div>
+                            <h4>Infinite Scalability</h4>
+                            <p>Add unlimited servers without compromising domain integrity or performance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="architecture-3d-container">
+                        <div class="architecture-controls">
+                            <button class="control-btn active" data-view="overview">Overview</button>
+                            <button class="control-btn" data-view="security">Security</button>
+                            <button class="control-btn" data-view="routing">AI Routing</button>
+                            <button class="control-btn" data-view="scaling">Scaling</button>
+                        </div>
+                        <div id="server-architecture-3d" class="server-3d-display"></div>
+                        <div class="architecture-info">
+                            <div class="info-panel" id="info-overview">
+                                <h4>Multi-Server Architecture</h4>
+                                <p>Revolutionary single-domain, multi-server infrastructure</p>
+                            </div>
+                            <div class="info-panel" id="info-security" style="display: none;">
+                                <h4>Dynamic Security Layer</h4>
+                                <p>256-bit encryption with rotating security keys</p>
+                            </div>
+                            <div class="info-panel" id="info-routing" style="display: none;">
+                                <h4>AI-Powered Routing</h4>
+                                <p>Intelligent load balancing and traffic optimization</p>
+                            </div>
+                            <div class="info-panel" id="info-scaling" style="display: none;">
+                                <h4>Infinite Scalability</h4>
+                                <p>Add unlimited servers without domain fragmentation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison-section">
+        <div class="comparison-bg-wrapper">
+            <img src="/images/comparison-ui.png" alt="Minimalist UI Comparison" class="comparison-bg-image">
+            <div class="comparison-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">Legacy Systems vs. 1DALLMAIL</h2>
+                        <p class="section-subtitle">See why Fortune 500 companies are making the switch</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="comparison-table">
+                        <div class="table-header">
+                            <div class="header-item">Feature</div>
+                            <div class="header-item legacy">Legacy Systems</div>
+                            <div class="header-item modern">1DALLMAIL</div>
+                        </div>
+                        
+                        <div class="table-body">
+                            <div class="table-row">
+                                <div class="feature-name">Single Domain Multiple Servers</div>
+                                <div class="feature-value legacy">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="feature-value modern">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="table-row">
+                                <div class="feature-name">Server Isolation</div>
+                                <div class="feature-value legacy">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="feature-value modern">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="table-row">
+                                <div class="feature-name">AI Automation</div>
+                                <div class="feature-value legacy">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="feature-value modern">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="table-row">
+                                <div class="feature-name">Dynamic Security</div>
+                                <div class="feature-value legacy">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="feature-value modern">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="table-row">
+                                <div class="feature-name">Cost Optimization</div>
+                                <div class="feature-value legacy">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="feature-value modern">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="table-row">
+                                <div class="feature-name">Infinite Scalability</div>
+                                <div class="feature-value legacy">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="feature-value modern">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="benefits-bg-wrapper">
+            <img src="/images/benefits-boardroom.jpg" alt="Corporate Boardroom with Holographic Projection" class="benefits-bg-image">
+            <div class="benefits-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">Why Enterprises Choose 1DALLMAIL</h2>
+                        <p class="section-subtitle">The decisive advantages that transform enterprise email infrastructure</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h4>Unified Corporate Branding</h4>
+                        <p>All executives use the same prestigious domain, strengthening brand authority and trust</p>
+                        <div class="benefit-metric">
+                            <span class="metric-value">100%</span>
+                            <span class="metric-label">Brand Consistency</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Military-Grade Security</h4>
+                        <p>Advanced encryption and isolation protocols meet the highest government and banking standards</p>
+                        <div class="benefit-metric">
+                            <span class="metric-value">256-bit</span>
+                            <span class="metric-label">Encryption</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>AI Simplifies Management</h4>
+                        <p>Intelligent automation reduces IT overhead by 80% while improving performance and reliability</p>
+                        <div class="benefit-metric">
+                            <span class="metric-value">80%</span>
+                            <span class="metric-label">Less IT Work</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h4>Scales Infinitely</h4>
+                        <p>Add unlimited servers without domain fragmentation or performance degradation</p>
+                        <div class="benefit-metric">
+                            <span class="metric-value">∞</span>
+                            <span class="metric-label">Servers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Cuts Operational Costs</h4>
+                        <p>Reduce infrastructure complexity and maintenance costs by up to 60% annually</p>
+                        <div class="benefit-metric">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">Cost Reduction</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Future-Proof Technology</h4>
+                        <p>Patent-pending innovation ensures your infrastructure stays ahead of industry standards</p>
+                        <div class="benefit-metric">
+                            <span class="metric-value">2030+</span>
+                            <span class="metric-label">Future Ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency Section -->
+    <section id="urgency" class="urgency-section">
+        <div class="urgency-bg-wrapper">
+            <!-- <img src="/images/urgency-badge.png" alt="Elegant Gold Badge with Countdown" class="urgency-bg-image"> -->
+            <div class="urgency-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="urgency-content text-center">
+                        <div class="urgency-badge">
+                            <i class="fas fa-hourglass-half"></i>
+                            <span>Limited Availability</span>
+                        </div>
+                        
+                        <h2 class="urgency-title">Only 10 Companies per Year – 6 Spots Left in 2025</h2>
+                        <p class="urgency-subtitle">Patent-pending technology with Fortune 500 security requirements</p>
+                        
+                        <div class="availability-counter">
+                            <div class="counter-item">
+                                <div class="counter-number">6</div>
+                                <div class="counter-label">Spots Remaining</div>
+                            </div>
+                            <div class="counter-item">
+                                <div class="counter-number">2025</div>
+                                <div class="counter-label">Current Year</div>
+                            </div>
+                            <div class="counter-item">
+                                <div class="counter-number">NDA</div>
+                                <div class="counter-label">Required</div>
+                            </div>
+                        </div>
+                        
+                        <div class="urgency-features">
+                            <div class="feature-item">
+                                <i class="fas fa-certificate"></i>
+                                <span>Patent-Pending Technology</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Fortune 500 Security Standards</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-handshake"></i>
+                                <span>White-Glove Implementation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA & Form Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-bg-wrapper">
+            <!-- <img src="/images/contact-form-ui.png" alt="Minimalist Contact Form UI" class="contact-bg-image"> -->
+            <div class="contact-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-content text-center">
+                        <h2 class="contact-title">Find Out Why Fortune 500 Chooses 1DALLMAIL</h2>
+                        <p class="contact-subtitle">Next Technical Briefing: August 2025 • 3 Slots Remaining</p>
+                        
+                        <div class="contact-form-wrapper">
+                            <form class="contact-form" id="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Full Name" required>
+                                            <div class="form-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Company" required>
+                                            <div class="form-line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Corporate Email" required>
+                                            <div class="form-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Title/Position" required>
+                                            <div class="form-line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="4" placeholder="Current Email Infrastructure Challenges"></textarea>
+                                            <div class="form-line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <span>Request Technical Briefing for CTOs</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-outline-light btn-lg">
+                                        <i class="fas fa-download"></i>
+                                        <span>Download Technical Specifications</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="contact-security">
+                            <div class="security-item">
+                                <i class="fas fa-lock"></i>
+                                <span>256-bit SSL Encryption</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>SOC 2 Type II Compliant</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-user-secret"></i>
+                                <span>NDA Protected</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <div class="brand-logo">
+                            <span class="brand-text">1DALL</span><span class="brand-accent">MAIL</span>
+                        </div>
+                        <p>Revolutionary email infrastructure for Fortune 500 enterprises.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2">
+                    <div class="footer-links">
+                        <h5>Product</h5>
+                        <ul>
+                            <li><a href="#innovation">Innovation</a></li>
+                            <li><a href="#benefits">Benefits</a></li>
+                            <li><a href="#comparison">Comparison</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Patents</a></li>
+                            <li><a href="#">Security</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2">
+                    <div class="footer-links">
+                        <h5>Support</h5>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Technical Support</a></li>
+                            <li><a href="#">Status</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2">
+                    <div class="footer-links">
+                        <h5>Legal</h5>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">NDA</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 1DALLMAIL. All rights reserved. Patent Pending.</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <div class="footer-security">
+                            <span>Enterprise Grade Security</span>
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="3d-sever-architecture.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+/* ===== 3D SERVER ARCHITECTURE DISPLAY ===== */
+.architecture-3d-container {
+    position: relative;
+    background: rgba(10, 14, 63, 0.3);
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    overflow: hidden;
+    min-height: 600px;
+  }
+  
+  .architecture-controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .control-btn {
+    background: rgba(2, 4, 42, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--platinum);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .control-btn:hover {
+    border-color: var(--accent-gold);
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .control-btn.active {
+    background: linear-gradient(135deg, var(--accent-gold), #ffd700);
+    color: var(--primary-navy);
+    border-color: var(--accent-gold);
+    font-weight: 600;
+  }
+  
+  .server-3d-display {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    cursor: grab;
+  }
+  
+  .server-3d-display:active {
+    cursor: grabbing;
+  }
+  
+  .architecture-info {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    max-width: 300px;
+  }
+  
+  .info-panel {
+    background: rgba(2, 4, 42, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(15px);
+    animation: fadeInUp 0.5s ease;
+  }
+  
+  .info-panel h4 {
+    color: var(--accent-gold);
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .info-panel p {
+    color: var(--platinum);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  /* 3D Scene Loading Animation */
+  .loading-3d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    z-index: 50;
+  }
+  
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(212, 175, 55, 0.3);
+    border-top: 3px solid var(--accent-gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive 3D Display */
+  @media (max-width: 768px) {
+    .architecture-controls {
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 20px;
+      justify-content: center;
+    }
+  
+    .control-btn {
+      padding: 8px 16px;
+      font-size: 0.8rem;
+    }
+  
+    .server-3d-display {
+      height: 400px;
+    }
+  
+    .architecture-info {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      max-width: 100%;
+      padding: 20px;
+    }
+  }
+  
+  /* Particle Effects for 3D Scene */
+  .particle-system {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .data-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--accent-gold);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: dataFlow 3s linear infinite;
+  }
+  
+  @keyframes dataFlow {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    90% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(-100px) scale(0.5);
+      opacity: 0;
+    }
+  }
+  
+  /* Interactive Tooltips */
+  .server-tooltip {
+    position: absolute;
+    background: rgba(2, 4, 42, 0.95);
+    border: 1px solid var(--accent-gold);
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: var(--platinum);
+    font-size: 0.9rem;
+    pointer-events: none;
+    z-index: 200;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .server-tooltip.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .server-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--accent-gold);
+  }
+  
+  /* Performance Indicators */
+  .performance-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .perf-indicator {
+    background: rgba(2, 4, 42, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    color: var(--platinum);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .perf-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success-green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  .perf-dot.warning {
+    background: #ffa500;
+  }
+  
+  .perf-dot.error {
+    background: var(--error-red);
+  }
+  
