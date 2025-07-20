@@ -556,18 +556,19 @@ function addPerformanceIndicators() {
   overlay.className = "performance-overlay"
   overlay.innerHTML = `
     <div class="perf-indicator">
-      <div class="perf-dot"></div>
-      <span>System Online</span>
+        <div class="perf-dot"></div>
+        <span>システム稼働中</span>
     </div>
     <div class="perf-indicator">
-      <div class="perf-dot"></div>
-      <span>AI Routing Active</span>
+        <div class="perf-dot"></div>
+        <span>AIルーティング稼働中</span>
     </div>
     <div class="perf-indicator">
-      <div class="perf-dot"></div>
-      <span>Security Layer OK</span>
+        <div class="perf-dot"></div>
+        <span>セキュリティレイヤー正常</span>
     </div>
-  `
+    
+    `
 
   container.appendChild(overlay)
 }

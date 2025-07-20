@@ -1,7 +1,7 @@
 // ===== GSAP ANIMATIONS & INTERACTIONS =====
 
 // Import GSAP and plugins
-const gsap = window.gsap
+// const gsap = window.gsap
 const ScrollTrigger = window.gsap.ScrollTrigger
 const TextPlugin = window.gsap.TextPlugin
 
@@ -104,17 +104,17 @@ heroTimeline.from(
 )
 
 // Hero CTA buttons animation
-heroTimeline.from(
-  ".hero-cta .btn",
-  {
-    y: 50,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: "power2.out",
-  },
-  "-=0.6",
-)
+// heroTimeline.from(
+//   ".hero-cta .btn",
+//   {
+//     y: 50,
+//     opacity: 0,
+//     duration: 0.8,
+//     stagger: 0.2,
+//     ease: "power2.out",
+//   },
+//   "-=0.6",
+// )
 
 // Hero stats animation
 heroTimeline.from(
