@@ -53,19 +53,22 @@ window.addEventListener("scroll", () => {
 })
 
 // Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault()
-    const target = document.querySelector(this.getAttribute("href"))
-    if (target) {
-      gsap.to(window, {
-        duration: 1.5,
-        scrollTo: target,
-        ease: "power2.inOut",
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault()
+        const target = document.querySelector(this.getAttribute("href"))
+        if (target) {
+          gsap.to(window, {
+            duration: 0.8,
+            scrollTo: target,
+            ease: "power2.inOut",
+          })
+        }
       })
-    }
+    })
   })
-})
+  
 
 // ===== HERO ANIMATIONS =====
 const heroTimeline = gsap.timeline()

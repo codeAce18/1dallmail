@@ -169,6 +169,13 @@ body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+.defense-panel,
+.defense-map {
+  background-color: rgba(0, 0, 0, 0.6); /* black with 60% opacity */
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 /* ===== HERO SECTION ===== */
 .hero-section {
   min-height: 100vh;
@@ -751,15 +758,7 @@ body {
   opacity: 0.2;
 }
 
-.problem-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(2, 4, 42, 0.8) 0%, rgba(10, 14, 63, 0.6) 100%);
-  z-index: 2;
-}
+
 
 .problem-visual {
   position: relative;
@@ -938,7 +937,7 @@ body {
   opacity: 0.15;
 }
 
-.innovation-overlay {
+/* .innovation-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -946,7 +945,7 @@ body {
   height: 100%;
   background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
   z-index: 2;
-}
+} */
 
 .innovation-section .container {
   position: relative;
@@ -1169,7 +1168,7 @@ body {
   opacity: 0.2;
 }
 
-.benefits-overlay {
+/* .benefits-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -1177,7 +1176,7 @@ body {
   height: 100%;
   background: linear-gradient(135deg, rgba(2, 4, 42, 0.8) 0%, rgba(10, 14, 63, 0.6) 100%);
   z-index: 2;
-}
+} */
 
 .benefits-section .container {
   position: relative;
@@ -1431,7 +1430,7 @@ body {
   opacity: 0.15;
 }
 
-.contact-overlay {
+/* .contact-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -1439,7 +1438,7 @@ body {
   height: 100%;
   background: linear-gradient(135deg, rgba(2, 4, 42, 0.9) 0%, rgba(10, 14, 63, 0.7) 100%);
   z-index: 2;
-}
+} */
 
 .contact-content {
   position: relative;
@@ -1636,6 +1635,111 @@ body {
   color: var(--accent-gold);
   font-weight: 500;
 }
+
+
+/* ===== EMAIL STEALTH SECTION ===== */
+.stealth-section {
+  padding: var(--section-padding, 80px 0);
+  background: linear-gradient(135deg, #0e1013, #0f1115); /* dark layered tone */
+  color: #fff;
+}
+
+.stealth-section .section-title {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.stealth-section .section-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.stealth-description h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.stealth-description p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.stealth-description ul li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.stealth-description ul li i {
+  font-size: 1.1rem;
+}
+
+/* ===== WHITE-HAT HACKER DEFENSE SECTION ===== */
+.defense-section {
+  padding: var(--section-padding, 80px 0);
+  background: linear-gradient(135deg, #12161b, #101418);
+  color: #fff;
+}
+
+.defense-section .section-title {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.defense-section .section-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.defense-panel,
+.defense-map {
+  background: rgba(15, 17, 25, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.defense-panel:hover,
+.defense-map:hover {
+  border-color: var(--accent-gold, #D4AF37);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.defense-panel h5,
+.defense-map h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.attack-log p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.attack-log hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.defense-section ul.list-inline .badge {
+  padding: 0.5em 0.75em;
+  font-size: 0.9rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+}
+
+
+
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
