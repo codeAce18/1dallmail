@@ -514,7 +514,7 @@ class ServerArchitecture3D {
       this.renderer.dispose()
     }
 
-    // Clean up geometries and materials
+
     this.scene.traverse((object) => {
       if (object.geometry) object.geometry.dispose()
       if (object.material) {
@@ -528,9 +528,9 @@ class ServerArchitecture3D {
   }
 }
 
-// Initialize 3D Server Architecture when page loads
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Wait for the innovation section to be visible
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -567,7 +567,7 @@ function addPerformanceIndicators() {
         <div class="perf-dot"></div>
         <span>セキュリティレイヤー正常</span>
     </div>
-    
+
     `
 
   container.appendChild(overlay)

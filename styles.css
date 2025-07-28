@@ -1034,6 +1034,7 @@ body {
   line-height: 1.6;
 }
 
+
 /* ===== COMPARISON SECTION ===== */
 .comparison-section {
   padding: var(--section-padding);
@@ -1413,6 +1414,30 @@ body {
   position: relative;
   overflow: hidden;
 }
+
+
+.video-section {
+  padding: var(--section-padding);
+  background: linear-gradient(135deg, var(--secondary-navy) 0%, var(--primary-navy) 100%);
+  color: white;
+  text-align: center;
+}
+
+.video-wrapper {
+  max-width: 960px;
+  margin: 2rem auto 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: black;
+}
+
 
 .contact-bg-wrapper {
   position: absolute;
